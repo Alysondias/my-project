@@ -1,0 +1,197 @@
+@charset "UTF-8"; 
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype'); /* modelo de fonte importada do PC para o CSS3*/
+    font-weight: normal;
+    
+}
+@font-face{
+    font-family: 'Bebas Neue';
+    src: url(../fontes/BebasNeue-Regular.ttf) format('Truetype');
+    font-weight: normal;
+     /* modelo de fonte importada do PC para o CSS3*/
+}
+/* #c5ebd6
+#83e1ad
+#3ddc84x
+#2fa866
+#1a5c37
+#063d1e
+*/
+:root{   /*atalhos para edições completas no site, para nao fazer uma por uma, cores e fontes*/
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque:'Bebas Neue', cursive;
+    --font-android: 'Android', cursive; 
+}
+*
+{   margin: 0px;   /* margem  da pagina completa */
+    padding: 0px;  /* preenchimento  da pagina completa */
+}
+body{
+    background-color: var(--cor0); /* plano de fundo da pagina inteira*/
+    font-family: var(--font-padrao); /* modelo da fonte da pagina inteira */
+}
+a.externo::after{ /* para colocar um icone quando for links, crie uma class no caso daqui é "externo" after quer dizer depois do link vai o icone. vá no html e onde tem links crie class="externo" e o icone ira aparecer  */
+    content: '\00A0\1F517'; /* codigo do icone no emojipedia 00A0 para dar os espaçamentos */
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor3),var(--cor5));  /* modificar a cor usando uma mistura de cores , degradê*/
+    min-height: 150px; /* altura minima do cabeçado*/
+    text-align: center; /* centralizando texto do cabeçalho*/
+    padding-top: 40px;  /* preenchimento parte superior do cabeçalho */
+}
+header > h1{
+    color:white ;/*cor do cabeçalho > h1 para definir a cor do titulo grande dentro do cabeçalho */
+    font-family: var(--font-destaque); /* colocar uma fonte criada ou baixada */
+    font-size: 4em; /* aumentar o tamanho da fonte  */
+    margin-bottom: 20px; /* margem embaixo do h1 */
+    text-shadow: 2px 2px  0px rgba(0, 0, 0, 0.342);
+}
+header > p{
+    font-family: var(--font-padrao);
+    font-size: 1.2em; /* aumentar o tamanho da fonte  */
+    max-width: 500px; /* definir largura maxima do paragrafo */
+    margin: auto; /* para centralizar o texto, pois quando vc defini uma largura maxima ele automaticamente vira um bloco */
+    padding-right: 10px; /* preenchimento lateral direito */
+    padding-left: 10px; /* preenchimento lateral esquerdo */
+    color: rgb(247, 245, 245);  /*cor do cabeçalho > p para definir a cor do paragrafo dentro do cabeçalho */
+    text-shadow: 2px 2px  0px rgba(0, 0, 0, 0.245);
+    list-style: armenian;
+}
+nav{
+    background-color: var(--cor5); /* cor de fundo dos links para acessos */
+    padding: 10px;  /* preenchimento dos links */
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.144);  /* sombras  */
+}
+nav > a {
+    color: var(--cor0);  /* cor do texto dos links */
+    padding: 10px;  /* para dar uma separada entre os a ou seja os links*/
+    text-decoration: none;  /* para perder o sumblinhado */
+    font-weight: bold;  /* colocar em negrito*/
+    border-radius: 5px;  /* dar uma quebrada nas extremidades */
+    transition-duration: 0.5s;  /* quando passar o mouse, demorar um tempo de transição */
+}
+nav >a:hover{  /* mudar a cor quando passar o mouse */
+    background-color: var(--cor3);  /* definir cor */
+    color: var(--cor5);  /* cor da letra quando passar o mouse */
+}
+main {
+    padding: 20px; /*espaço das estremidados do conteudo principal */
+    min-width: 300px; /*tamanho do conteudo principal minimo */
+    max-width: 1000px; /*tamanho do conteudo principal maximo */
+    margin: auto; /*centralizar conteudo principal*/
+    margin-bottom: 30px; /*margem inferior */
+    background-color: white;/*cor de fundo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.334); /*sombras */
+    border-bottom-left-radius:10px ;  /* bordas inferiores arredondadas */
+    border-bottom-right-radius:10px ; /* bordas inferiores arredondadas */
+}
+main p {
+    margin: 15px 0px; /* criar uma margem para todos os paragrafos da pagina, dando seus espaçamentos corretos.*/
+    text-align: justify; /* justificando o texto, deixando alinhado*/
+    text-indent: 30px; /* para dar um recuo no inicio do paragrafo*/
+    line-height: 1.5em; /* espaçamento entre as linhas dos paragrafos na vertical*/
+    font-size: 1em;  /* aumentar o tamanho da fonte  */
+} 
+main strong{
+    color: var(--cor3); /* cor do texto em negrito */
+    font-weight: bold;  /* colocar texto em negrito */
+    padding: 1px 1px; /* dar um espaçamento das demais palavras */
+
+}
+main a{
+    text-decoration: none;  /* para perder o sumblinhado */
+    font-weight: bold;  /* colocar texto em negrito */
+    color: var(--cor4); /* cor do texto dos links */
+    background-color: var(--cor0); /*cor de fundo dos links */
+}
+main a:hover{
+    text-decoration: underline;
+}
+main  h1 {
+    color: var(--cor5); /* cor da fonte do titulo grande */
+    font-family: var(--font-android);  /* modelo da fonte do titulo grande */
+} 
+
+main h2 {
+    font-family: var(--font-android); /* modelo da fonte do subtitulo*/
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);/* deixar o plano de fundo começando com uma cor e terminando degrade*/
+    text-indent: 8px; /* dar um espaçamento no inicio do texto h2*/
+}
+main img {
+    width: 100%;  /* usar 100% de todas as imagens sem quebras*/
+}
+main img.pequena{  /* criar uma imagem pequena usando 50% dela*/
+    display: block; 
+    margin: auto; /* centralizar imagem na pagina*/
+    max-width: 350px;  /* definir tamanho da imagem para nao ficar desconfigurada*/
+}
+div.video{ /* configuracoes de plano de fundo do video*/
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58.5%;
+    position: relative; /* posicionamento relativo*/
+}
+div.video > iframe {
+ position: absolute; /* posicionamento absoluto*/
+ top: 5% ;
+ left: 5%;
+ width: 90%;
+ height: 90% ;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.245);
+}
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px; /* dar um espaçamento das demais palavras */
+    margin: -10px -10px 0px -10px; /* negativo na ordem encima, lado direito, embaixo e lado esquerdo, sentido horario */
+    border-radius: 10px 10px 0px 0px; /* para deixar as bordas nos dois cantos superiores*/
+    text-indent: 8px; /* espaçamento do inicio do texto */
+}
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* para mudar o icone da lista procure qual vc quer em emojipedia o 00A0 e para das espaços entre o icone e o texto sempre usar barra invertida*/
+    list-style-position: inside; /* a posicao da lista para o lado de centro*/
+    columns: 2; /* para dividir a lista em colunas*/
+}
+aside strong{
+    color: var(--cor5);
+}
+aside a{
+    background-color: var(--cor4);
+    color: white;
+    padding: 2px;
+    border-radius:3px ;
+}
+footer{
+    background-color: var(--cor5); /* cor do fundo do rodapé*/
+    color: white; /* cor da letra da fonte do rodapé*/
+    text-align: center;
+    font-size: 0.8em;
+} footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 5px;
+}
+footer a:hover{
+   text-decoration: underline;
+   color: var(--cor2);
+   
+}
